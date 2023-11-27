@@ -19,9 +19,9 @@ public class PartidoController {
                 public void onResponse(Call<PartidoDTO> call, Response<PartidoDTO> response) {
                     PartidoDTO partidoDTO = response.body();
                     listaPartidos.addAll(partidoDTO.getDados());
-                    for (DadosPartidoDTO dadosPartidoDTO : listaPartidos) {
-                        System.out.println(dadosPartidoDTO.getNome());
-                    }
+//                    for (DadosPartidoDTO dadosPartidoDTO : listaPartidos) {
+//                        System.out.println(dadosPartidoDTO.getNome());
+//                    }
                 }
 
                 @Override
