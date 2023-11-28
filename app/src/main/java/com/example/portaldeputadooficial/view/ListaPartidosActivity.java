@@ -1,7 +1,6 @@
 package com.example.portaldeputadooficial.view;
 
 import static com.example.portaldeputadooficial.util.Global.listaPartidos;
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 
 public class ListaPartidosActivity extends AppCompatActivity {
 
-    ListView lvPartidos;
+    private ListView lvPartidos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
