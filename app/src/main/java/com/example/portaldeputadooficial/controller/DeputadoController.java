@@ -1,12 +1,10 @@
 package com.example.portaldeputadooficial.controller;
 
-import static com.example.portaldeputadooficial.util.Global.despesaDTO;
 import static com.example.portaldeputadooficial.util.Global.listaDeputados;
-
+import static com.example.portaldeputadooficial.util.Global.listaDespesas;
 import com.example.portaldeputadooficial.model.dto.DeputadoDTO;
 import com.example.portaldeputadooficial.model.dto.DespesaDTO;
 import com.example.portaldeputadooficial.retrofit.RetrofitConfig;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,7 +36,8 @@ public class DeputadoController {
             call.enqueue(new Callback<DespesaDTO>() {
                 @Override
                 public void onResponse(Call<DespesaDTO> call, Response<DespesaDTO> response) {
-                    despesaDTO = response.body();
+                    DespesaDTO despesaDTO = response.body();
+                    listaDespesas.addAll(despesaDTO.getDados());
                 }
 
                 @Override

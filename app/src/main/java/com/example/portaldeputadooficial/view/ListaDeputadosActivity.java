@@ -2,13 +2,16 @@ package com.example.portaldeputadooficial.view;
 
 import static com.example.portaldeputadooficial.util.Global.listaDeputados;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.portaldeputadooficial.MainActivity;
 import com.example.portaldeputadooficial.R;
 import com.example.portaldeputadooficial.adapter.AdapterDeputado;
+import com.example.portaldeputadooficial.controller.DeputadoController;
 import com.example.portaldeputadooficial.model.dto.DadosDeputadoDTO;
 
 import java.util.ArrayList;
@@ -23,7 +26,14 @@ public class ListaDeputadosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_deputados);
 
         lvDeputados = findViewById(R.id.lvDeputados);
+
         atualizarGrid(listaDeputados);
+
+        lvDeputados.setOnItemClickListener((adapterView, view, i, l) -> {
+            DadosDeputadoDTO dadosDeputadoDTO = (DadosDeputadoDTO) lvDeputados.getItemAtPosition(i);
+            exibeDespesaDeputado(dadosDeputadoDTO.getId());
+            abrirActivityDespesas();
+        });
 
     }
 
@@ -32,4 +42,18 @@ public class ListaDeputadosActivity extends AppCompatActivity {
         lvDeputados.setAdapter(adapterDeputado);
         adapterDeputado.notifyDataSetChanged();
     }
+
+    private void exibeDespesaDeputado(long id) {
+        System.out.println("**************");
+        System.out.println(id);
+        DeputadoController.getDespesa(id);
+    }
+
+    private void abrirActivityDespesas() {
+        Intent intent = new Intent(this,
+                DespesaActivity.class);
+
+        startActivity(intent);
+    }
+
 }

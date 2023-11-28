@@ -25,6 +25,20 @@
             android:text="Fornecedor"
             android:id="@+id/tvFornecedor"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Data Documento"
+            android:id="@+id/tvDataDoc"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Valor"
+            android:id="@+id/tvValor"/>
+
     </LinearLayout>
 
 </LinearLayout>
