@@ -50,11 +50,11 @@ public class AdapterPartido extends BaseAdapter {
         }
 
         DadosPartidoDTO dadosPartidoDTO = listaPartidos.get(i);
-        TextView tvIdPartido = view.findViewById(R.id.tvIdPartido);
+//        TextView tvIdPartido = view.findViewById(R.id.tvIdPartido);
         TextView tvSiglaPartido = view.findViewById(R.id.tvSiglaPartido);
         TextView tvNomePartido = view.findViewById(R.id.tvNomePartido);
 
-        tvIdPartido.setText(String.valueOf(dadosPartidoDTO.getId()));
+//        tvIdPartido.setText(String.valueOf(dadosPartidoDTO.getId()));
         tvSiglaPartido.setText(String.valueOf(dadosPartidoDTO.getSigla()));
         tvNomePartido.setText(dadosPartidoDTO.getNome());
 

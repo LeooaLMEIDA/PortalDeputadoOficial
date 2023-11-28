@@ -8,7 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.example.portaldeputadooficial.R;
 import com.example.portaldeputadooficial.model.dto.DadosDespesaDTO;
+
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AdapterDespesa extends BaseAdapter {
 
@@ -48,10 +51,12 @@ public class AdapterDespesa extends BaseAdapter {
         TextView tvDataDoc = view.findViewById(R.id.tvDataDoc);
         TextView tvValor = view.findViewById(R.id.tvValor);
 
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+
         tvTipoDespesa.setText(despesaDTO.getTipoDespesa());
         tvFornecedor.setText(despesaDTO.getNomeFornecedor());
         tvDataDoc.setText(despesaDTO.getDataDocumento());
-        tvValor.setText(String.valueOf(despesaDTO.getValorDocumento()));
+        tvValor.setText(numberFormat.format(despesaDTO.getValorDocumento()));
 
         return view;
     }

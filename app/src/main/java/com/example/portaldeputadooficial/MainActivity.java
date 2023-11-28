@@ -1,5 +1,7 @@
 package com.example.portaldeputadooficial;
 
+import static com.example.portaldeputadooficial.util.Global.listaPartidos;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,6 +10,7 @@ import android.widget.Button;
 
 import com.example.portaldeputadooficial.controller.DeputadoController;
 import com.example.portaldeputadooficial.controller.PartidoController;
+import com.example.portaldeputadooficial.model.dto.DadosPartidoDTO;
 import com.example.portaldeputadooficial.view.ListaDeputadosActivity;
 import com.example.portaldeputadooficial.view.ListaPartidosActivity;
 
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btVisualizarPartidos.setOnClickListener(v -> abrirActivityPartidos());
 
         PartidoController.getPartidos();
+
 
     }
 

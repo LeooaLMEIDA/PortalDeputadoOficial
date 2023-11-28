@@ -14,7 +14,6 @@ public class ListaPartidosActivity extends AppCompatActivity {
 
     ListView lvPartidos;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -34,7 +34,6 @@ public class ListaDeputadosActivity extends AppCompatActivity {
             exibeDespesaDeputado(dadosDeputadoDTO.getId());
             abrirActivityDespesas();
         });
-
     }
 
     private void atualizarGrid(ArrayList<DadosDeputadoDTO> listaDeputados) {
@@ -44,8 +43,6 @@ public class ListaDeputadosActivity extends AppCompatActivity {
     }
 
     private void exibeDespesaDeputado(long id) {
-        System.out.println("**************");
-        System.out.println(id);
         DeputadoController.getDespesa(id);
     }
 
